@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-
     const products = useSelector(state => state.ProductsReducer.products);
     //console.log(products)
 
@@ -21,7 +20,7 @@ const Home = () => {
                             <h2>{elem.name}</h2>
                         </div>
                         <div className="price-container">
-                            <div>${elem.price}</div>
+                            <div className="price">${elem.price}</div>
                             <div>${elem.discountPrice}</div>
                         </div>
                     </div>
