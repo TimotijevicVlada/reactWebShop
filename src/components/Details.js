@@ -19,6 +19,12 @@ const Details = () => {
             setQuantity(quantity - 1);
         }
     }
+    const AddToCart = () => {
+        dispatch({
+            type: "ADD_TO_CART",
+            payload: {product, quantity}
+        })
+    }
     const id = useParams().id;  //Dobijam broj id za svaki kliknuti element
     //console.log(id);
     const dispatch = useDispatch();
@@ -43,7 +49,7 @@ const Details = () => {
                     <span className="dec" onClick={decreaseQuantity}><i className="fas fa-minus"></i></span>
                     <span className="quantity">{quantity}</span>
                     <span className="inc" onClick={increaseQuantity}><i className="fas fa-plus"></i></span>
-                    <button className="details-btn">add to cart</button>
+                    <button className="details-btn" onClick={AddToCart}>add to cart</button>
                 </div>
                 <div className="details-description">
                     <h2>Details</h2>
