@@ -36,7 +36,7 @@ a {
   position: relative;
 }
 .basket div {
-  background-color: red;
+  background-color: indianred;
   position: absolute;
   top: -5px;
   right: -15px;
@@ -159,4 +159,48 @@ a {
 .details-description h2 {
   font-weight: 500;
   margin-bottom: 12px;
+}
+
+/*SHOPPING CART*/
+.cart-container {
+  margin-top: 100px;
+}
+.cart-title {
+  margin: 10px 0px;
+}
+.cart-heading {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(233, 233, 233);
+}
+.cart-summary {
+  width: 25%;
+  background-color: indianred;
+  padding: 10px;
+}
+.cart-products {
+display: flex;
+}
+.cart-heading div {
+  width: 15%;
+}
+.cart-left-side {
+  width: 75%;
+}
+.cart-products-wrapper {
+  display: flex;
+  margin: 5px 0px;
+}
+.cart-products-wrapper div {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-image img {
+  width: 60%;
+}
+.cart-trash i {
+  font-size: 22px;
 }
