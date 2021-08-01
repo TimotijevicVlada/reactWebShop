@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 const Cart = () => {
   const { products } = useSelector((state) => state.CartReducer);
   //console.log(products) //Dobijamo objekat koji smo kliknuli na add to cart
+  const dispatch = useDispatch();
+  
   return (
     <div className="cart-container">
       <h3 className="cart-title">Your cart</h3>
@@ -31,11 +33,11 @@ const Cart = () => {
                 </div>
                 <div>
                   <div>
-                    <span className="dec">
+                    <span className="dec" onClick={() => dispatch({type: "DEC", payload: item.id})}>
                       <i className="fas fa-minus"></i>
                     </span>
                     <span className="quantity">{item.quantity}</span>
-                    <span className="inc">
+                    <span className="inc" onClick={() => dispatch({type: "INC", payload: item.id})}>
                       <i className="fas fa-plus"></i>
                     </span>
                   </div>
@@ -44,7 +46,7 @@ const Cart = () => {
                   <div>${(item.discountPrice * item.quantity).toFixed(2)}</div>
                 </div>
                 <div className="cart-trash">
-                  <i class="fas fa-trash"></i>
+                  <i class="fas fa-trash" onClick={() => dispatch({type: "REMOVE", payload: item.id})}></i>
                 </div>
               </div>
             ))}

@@ -203,4 +203,5 @@ display: flex;
 }
 .cart-trash i {
   font-size: 22px;
+   cursor: pointer;
 }
