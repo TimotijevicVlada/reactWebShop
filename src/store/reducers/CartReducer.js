@@ -36,13 +36,18 @@ const CartReducer = (state = initState, action) => {
       index = state.products.findIndex(
         (product) => product.id === action.payload
       );
+      if(findProduct.quantity < 20) {
       findProduct.quantity += 1;
       state.products[index] = findProduct;
       return {
         ...state,
-        totalPrice: state.totalPrice * findProduct.discountPrice,
+        totalPrice: state.totalPrice + findProduct.discountPrice,
         totalQuantity: state.totalQuantity + 1,
-      };
+      };}else {
+        alert("The most products you can add is 20!");
+        return state;
+      }
+
     case "DEC":
       findProduct = state.products.find(
         (product) => product.id === action.payload

@@ -176,8 +176,15 @@ a {
 }
 .cart-summary {
   width: 25%;
-  background-color: indianred;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(233, 233, 233);
   padding: 10px;
+}
+.cart-summary h2 {
+  font-weight: 100;
 }
 .cart-products {
 display: flex;
@@ -204,4 +211,23 @@ display: flex;
 .cart-trash i {
   font-size: 22px;
    cursor: pointer;
+}
+.summary-display {
+  background-color: indianred;
+  padding: 10px;
+  margin: 12px;
+}
+.summary-display div {
+  font-size: 20px;
+}
+.buy-btn {
+  cursor: pointer;
+  color: black;
+  background-color: rgb(233, 233, 233);
+  width: 90%;
+  padding: 8px;
+  margin: 10px auto;
+}
+.summary-total, .summary-price {
+  color: white;
 }
