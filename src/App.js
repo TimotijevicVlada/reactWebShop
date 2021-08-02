@@ -5,6 +5,7 @@ import React from "react";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
+import Contact from './components/Contact';
 import Details from "./components/Details";
 import "./App.css";
 
@@ -15,6 +16,7 @@ const App = () => {
         <Nav />
         <Route path="/" exact component={Home} />
         <Route path="/cart" exact component={Cart} />
+        <Route path="/contact" exact component={Contact} />
         <Route path="/details/:id" exact component={Details} />
       </Provider>
     </Router>
