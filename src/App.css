@@ -170,6 +170,7 @@ a {
 /*SHOPPING CART*/
 .cart-container {
   margin-top: 100px;
+  min-height: 70vh;
 }
 .cart-title {
   margin: 10px 0px;
@@ -241,6 +242,7 @@ display: flex;
 .contact-container {
   margin-top: 100px;
   text-align: center;
+  min-height: 70vh;
 }
 .contact-container h2 {
   font-weight: 400;
@@ -262,4 +264,46 @@ display: flex;
 .contact-container button {
   border: none;
   font-size: 17px;
+}
+
+/*FOOTER*/
+.footer_container {
+  margin-top: 30px;
+  height: 70px;
+  box-shadow: 20px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.made_by {
+  text-align: center;
+  font-size: 20px;
+}
+.made_by span {
+  color: indianred;
+}
+.socialNetwork_icon i {
+  margin: 0 10px;
+  font-size: 30px;
+  color: gray;
+}
+/*UNDERFOOTER*/
+.underFooter_container {
+  display: flex;
+  justify-content: space-around;
+}
+.underFooter_container div {
+  width: 20%;
+  padding: 30px;
+}
+.underFooter_container div i {
+  margin: 10px 0px;
+  font-size: 30px;
+  color: gray;
+}
+.underFooter_container div h3 {
+  color: gray;
+}
+.underFooter_container div p {
+  color: gray;
 }

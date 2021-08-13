@@ -7,6 +7,8 @@ import Home from "./components/Home";
 import Cart from "./components/Cart";
 import Contact from './components/Contact';
 import Details from "./components/Details";
+import Footer from './components/Footer';
+import FooterUnder from './components/FooterUnder';
 import "./App.css";
 
 const App = () => {
@@ -19,6 +21,8 @@ const App = () => {
         <Route path="/contact" exact component={Contact} />
         <Route path="/details/:id" exact component={Details} />
       </Provider>
+      <Footer />
+      <FooterUnder />
     </Router>
   );
 };
