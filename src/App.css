@@ -265,6 +265,20 @@ display: flex;
   border: none;
   font-size: 17px;
 }
+.signup_container {
+  display: none;
+}
+.display_signup, .display_login {
+  color: blue;
+  cursor: pointer;
+}
+.login_container button, .signup_container button {
+  cursor: pointer;
+  font-weight: bold;
+}
+.login_container button:hover, .signup_container button:hover {
+  background-color: rgb(173, 173, 173);
+}
 
 /*FOOTER*/
 .footer_container {
