@@ -7,6 +7,9 @@ const Cart = () => {
   );
   //console.log(products) //Dobijamo objekat koji smo kliknuli na add to cart
   const dispatch = useDispatch();
+  const purchaseProducts = () => {
+    alert("Thank you for buying our products!")
+  }
 
   return (
     <div className="cart-container">
@@ -74,7 +77,7 @@ const Cart = () => {
           <div className="summary-display">
             <div className="summary-total">Total items: {totalQuantity}</div>
             <div className="summary-price">Total price: ${totalPrice.toFixed(2)}</div>
-            <div className="buy-btn">BUY</div>
+            <div onClick={purchaseProducts} className="buy-btn">BUY</div>
           </div>
         </div>
       </div>

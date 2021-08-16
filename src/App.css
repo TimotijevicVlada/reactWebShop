@@ -333,6 +333,16 @@ display: flex;
 .contact_us div i {
   margin-right: 10px;
 }
+.login div {
+  position: relative;
+}
+.login i {
+  position: absolute;
+  right: 30px;
+  top: 22px;
+  z-index: 1;
+  display: none;
+}
 
 /*FOOTER*/
 .footer_container {
