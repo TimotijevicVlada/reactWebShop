@@ -343,6 +343,10 @@ display: flex;
   z-index: 1;
   display: none;
 }
+.form_errors {
+  color: red;
+  font-size: 0.8em;
+}
 
 /*FOOTER*/
 .footer_container {

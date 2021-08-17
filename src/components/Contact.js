@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import validate from './validateInfo';
+import useForm from './useForm';
 
-const Contact = () => {
+const Contact = ({submitForm}) => {
   const [show, setShow] = useState();
-  const [loginRegex, setLoginRegex] = useState();
 
   const displaySignup = () => {
     const showSignup = document.getElementsByClassName("signup_container")[0];
@@ -21,98 +22,55 @@ const Contact = () => {
     );
   };
 
-  const regExp = () => {
-    let name = document.getElementsByClassName("nameLogin")[0];
-    let email = document.getElementsByClassName("emailLogin")[0];
-    let pass = document.getElementsByClassName("passLogin")[0];
-
-    let nameRegex = /^[A-Z][a-z]{2,}/;
-    let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    let passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-
-    let nameTest = nameRegex.test(name.value);
-    let emailTest = emailRegex.test(email.value);
-    let passTest = passRegex.test(pass.value);
-
-    let nameTrue = document.getElementById("nameTrue");
-    let nameFalse = document.getElementById("nameFalse");
-    let emailTrue = document.getElementById("emailTrue");
-    let emailFalse = document.getElementById("emailFalse");
-    let passTrue = document.getElementById("passTrue");
-    let passFalse = document.getElementById("passFalse");
-
-    if (nameTest) {
-        setLoginRegex(
-        nameTrue.style.display = "block",
-        name.style.borderColor = "green",
-        nameFalse.style.display = "none"
-        )
-      } else {
-        setLoginRegex(
-        nameFalse.style.display = "block",
-        name.style.borderColor = "red",
-        nameTrue.style.display = "none"
-        )
-      }
-    
-      if (emailTest) {
-        setLoginRegex(
-        emailTrue.style.display = "block",
-        email.style.borderColor = "green",
-        emailFalse.style.display = "none"
-        )
-      } else {
-        setLoginRegex(
-        emailFalse.style.display = "block",
-        email.style.borderColor = "red",
-        emailTrue.style.display = "none"
-        )
-      }
-    
-      if (passTest) {
-        setLoginRegex(
-        passTrue.style.display = "block",
-        pass.style.borderColor = "green",
-        passFalse.style.display = "none"
-        )
-      } else {
-        setLoginRegex(
-        passFalse.style.display = "block",
-        pass.style.borderColor = "red",
-        passTrue.style.display = "none"
-        )
-      }
-  };
+  const {handleChange, handleSubmit, values, errors} = useForm(
+    submitForm,
+    validate
+  );
+  
 
   return (
     <div className="contact-container">
       <div className="login_container">
-        <div className="login">
+        <form onSubmit={handleSubmit} className="login" noValidate>
           <h2>Login</h2>
           <div>
-                <i id="nameFalse" class="fas fa-times-circle"></i>
-                <i id="nameTrue" class="fas fa-check-circle"></i>
-            <input className="nameLogin" type="text" placeholder="Name" />
+            <input 
+             className="nameLogin form-input" 
+             type="text" 
+             name="username"
+             placeholder="Username"
+             value={values.username}
+             onChange={handleChange}
+             />
+             {errors.username && <p className="form_errors">{errors.username}</p>}
           </div>
           <div>
-                <i id="emailFalse" class="fas fa-times-circle"></i>
-                <i id="emailTrue" class="fas fa-check-circle"></i>
-            <input className="emailLogin" type="email" placeholder="Email" />
+            <input 
+             className="emailLogin form-input"
+             type="email" 
+             name="email"
+             placeholder="Email" 
+             value={values.email}
+             onChange={handleChange}
+             />
+             {errors.email && <p className="form_errors">{errors.email}</p>}
           </div>
           <div>
-                <i id="passFalse" class="fas fa-times-circle"></i>
-                <i id="passTrue" class="fas fa-check-circle"></i>
             <input
-              className="passLogin"
+              className="passLogin form-input"
               type="password"
+              name="password"
               placeholder="Password"
+              valuer={values.password}
+              onChange={handleChange}
             />
+            {errors.password && <p className="form_errors">{errors.password}</p>}
           </div>
-          <button onCLick={regExp}>Login</button>
+          <button class="form-input-btn" type="submit">Login</button>
           <p onClick={displaySignup} className="display_signup">
             Create account
           </p>
-        </div>
+        </form>
         <div className="send_message">
           <h2>Send us message</h2>
           <div>
