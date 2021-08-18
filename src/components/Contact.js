@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import validate from "./validateInfo";
-import useForm from "./useForm";
+import validate from "./FormValidation/validateInfo";
+import useForm from "./FormValidation/useForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const Contact = ({ submitForm }) => {
+
   const [show, setShow] = useState();
   const [eye, setEye] = useState();
   const [eyeSignup, setEyeSignup] = useState();
 
+  //Display signup form link
   const displaySignup = () => {
     const showSignup = document.getElementsByClassName("signup_container")[0];
     const hideLogin = document.getElementsByClassName("login_container")[0];
@@ -18,6 +20,7 @@ const Contact = ({ submitForm }) => {
       (showSignup.style.display = "block")
     );
   };
+  //Display login form link
   const displayLogin = () => {
     const showSignup = document.getElementsByClassName("signup_container")[0];
     const hideLogin = document.getElementsByClassName("login_container")[0];
@@ -82,6 +85,7 @@ const Contact = ({ submitForm }) => {
     }
   }
 
+  
   const { handleChange, handleSubmit, values, errors } = useForm(
     submitForm,
     validate

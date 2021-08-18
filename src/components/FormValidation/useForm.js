@@ -28,7 +28,8 @@ const useForm = (callback, validate) => {
         () => {
             if(Object.keys(errors).length === 0 && isSubmitting) {
                 //callback();
-                alert("Succesfull form!")
+                alert("Succesfull form!");
+                window.location.href = "http://localhost:3000/";
             }
         },
         [errors]

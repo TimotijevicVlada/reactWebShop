@@ -12,6 +12,7 @@ const Nav = () => {
                     <div className="nav_left">
                         <Link to="/"><h2>Home</h2></Link>
                         <Link to="/contact"><h2>Contact</h2></Link>
+                        <Link to="/about"><h2>About</h2></Link>
                     </div>
                     <div className="nav_right">
                         <Link to="/cart">

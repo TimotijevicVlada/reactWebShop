@@ -368,6 +368,9 @@ display: flex;
   color: lightgray;
   font-size: 1.5em;
 }
+.eye_open:hover, .eye_close:hover, .viewEye_signup:hover, .hideEye_signup:hover {
+  cursor: pointer;
+}
 .viewEye_signup, .hideEye_signup {
   position: absolute;
   right: 20px;
@@ -383,6 +386,21 @@ display: flex;
 }
 .signup_container:hover .viewEye_signup, .signup_container:hover .hideEye_signup {
   color: gray;
+}
+
+/*ABOUT*/
+.about_container {
+  margin: 100px;
+  min-height: 63vh;
+}
+.about_title {
+  text-align: center;
+  margin: 20px;
+  font-weight: 200;
+}
+.about_text {
+  letter-spacing: 2px;
+
 }
 
 /*FOOTER*/
