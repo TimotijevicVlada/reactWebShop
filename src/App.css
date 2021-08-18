@@ -347,6 +347,28 @@ display: flex;
   color: red;
   font-size: 0.8em;
 }
+.input_pass {
+  position: relative;
+}
+.input_pass:hover .eye_open {
+  color: gray;
+}
+.input_pass:hover .eye_close {
+  color: gray;
+}
+.eye_open, .eye_close {
+  position: absolute;
+  right: 35px;
+  top: 18px;
+  color: lightgray;
+  font-size: 1.5em;
+}
+.eye_close {
+  display: none;
+}
+.eye_open {
+  display: block;
+}
 
 /*FOOTER*/
 .footer_container {

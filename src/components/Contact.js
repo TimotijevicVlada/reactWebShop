@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import validate from './validateInfo';
-import useForm from './useForm';
+import validate from "./validateInfo";
+import useForm from "./useForm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
-const Contact = ({submitForm}) => {
+const Contact = ({ submitForm }) => {
   const [show, setShow] = useState();
+  const [eye, setEye] = useState();
 
   const displaySignup = () => {
     const showSignup = document.getElementsByClassName("signup_container")[0];
@@ -22,11 +26,36 @@ const Contact = ({submitForm}) => {
     );
   };
 
-  const {handleChange, handleSubmit, values, errors} = useForm(
+  const viewPass = () => {
+    let pass = document.getElementsByClassName("passLogin")[0];
+    let eyeOpen = document.getElementsByClassName("eye_open")[0];
+    let eyeClose = document.getElementsByClassName("eye_close")[0];
+    if (pass.type == "password") {
+      setEye(
+        (pass.type = "text"),
+        (eyeOpen.style.display = "none"),
+        (eyeClose.style.display = "block")
+      );
+    }
+  };
+
+  const hidePass = () =>{
+    let pass = document.getElementsByClassName("passLogin")[0];
+    let eyeOpen = document.getElementsByClassName("eye_open")[0];
+    let eyeClose = document.getElementsByClassName("eye_close")[0];
+    if(pass.type == "text") {
+      setEye(
+        (pass.type = "password"),
+        (eyeOpen.style.display = "block"),
+        (eyeClose.style.display = "none")
+      )
+    }
+  }
+
+  const { handleChange, handleSubmit, values, errors } = useForm(
     submitForm,
     validate
   );
-  
 
   return (
     <div className="contact-container">
@@ -34,28 +63,40 @@ const Contact = ({submitForm}) => {
         <form onSubmit={handleSubmit} className="login" noValidate>
           <h2>Login</h2>
           <div>
-            <input 
-             className="nameLogin form-input" 
-             type="text" 
-             name="username"
-             placeholder="Username"
-             value={values.username}
-             onChange={handleChange}
-             />
-             {errors.username && <p className="form_errors">{errors.username}</p>}
+            <input
+              className="nameLogin form-input"
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={values.username}
+              onChange={handleChange}
+            />
+            {errors.username && (
+              <p className="form_errors">{errors.username}</p>
+            )}
           </div>
           <div>
-            <input 
-             className="emailLogin form-input"
-             type="email" 
-             name="email"
-             placeholder="Email" 
-             value={values.email}
-             onChange={handleChange}
-             />
-             {errors.email && <p className="form_errors">{errors.email}</p>}
+            <input
+              className="emailLogin form-input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={values.email}
+              onChange={handleChange}
+            />
+            {errors.email && <p className="form_errors">{errors.email}</p>}
           </div>
-          <div>
+          <div className="input_pass">
+            <FontAwesomeIcon
+              onClick={viewPass}
+              className="eye_open"
+              icon={faEye}
+            />
+            <FontAwesomeIcon
+              onClick={hidePass}
+              className="eye_close"
+              icon={faEyeSlash}
+            />
             <input
               className="passLogin form-input"
               type="password"
@@ -64,9 +105,13 @@ const Contact = ({submitForm}) => {
               valuer={values.password}
               onChange={handleChange}
             />
-            {errors.password && <p className="form_errors">{errors.password}</p>}
+            {errors.password && (
+              <p className="form_errors">{errors.password}</p>
+            )}
           </div>
-          <button class="form-input-btn" type="submit">Login</button>
+          <button class="form-input-btn" type="submit">
+            Login
+          </button>
           <p onClick={displaySignup} className="display_signup">
             Create account
           </p>
