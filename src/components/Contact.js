@@ -8,6 +8,7 @@ import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 const Contact = ({ submitForm }) => {
   const [show, setShow] = useState();
   const [eye, setEye] = useState();
+  const [eyeSignup, setEyeSignup] = useState();
 
   const displaySignup = () => {
     const showSignup = document.getElementsByClassName("signup_container")[0];
@@ -26,10 +27,12 @@ const Contact = ({ submitForm }) => {
     );
   };
 
+  //Variables for login eye
+  let pass = document.getElementsByClassName("passLogin")[0];
+  let eyeOpen = document.getElementsByClassName("eye_open")[0];
+  let eyeClose = document.getElementsByClassName("eye_close")[0];
+  //View pass for login
   const viewPass = () => {
-    let pass = document.getElementsByClassName("passLogin")[0];
-    let eyeOpen = document.getElementsByClassName("eye_open")[0];
-    let eyeClose = document.getElementsByClassName("eye_close")[0];
     if (pass.type == "password") {
       setEye(
         (pass.type = "text"),
@@ -39,16 +42,43 @@ const Contact = ({ submitForm }) => {
     }
   };
 
-  const hidePass = () =>{
-    let pass = document.getElementsByClassName("passLogin")[0];
-    let eyeOpen = document.getElementsByClassName("eye_open")[0];
-    let eyeClose = document.getElementsByClassName("eye_close")[0];
-    if(pass.type == "text") {
+  //Hide pass for login
+  const hidePass = () => {
+    if (pass.type == "text") {
       setEye(
         (pass.type = "password"),
         (eyeOpen.style.display = "block"),
         (eyeClose.style.display = "none")
-      )
+      );
+    }
+  };
+
+  //Variables for signup eye
+  let passSignup = document.getElementsByClassName("pass_signup_input")[0];
+  let passConf = document.getElementsByClassName("pass_conf_input")[0];
+  let viewEye = document.getElementsByClassName("viewEye_signup")[0];
+  let hideEye = document.getElementsByClassName("hideEye_signup")[0];
+  //View pass signup
+  const viewPassSignup = () => {
+    if (passSignup.type == "password" || passConf.type == "password") {
+      setEyeSignup(
+        (passSignup.type = "text"),
+        (passConf.type = "text"),
+        (viewEye.style.display = "none"),
+        (hideEye.style.display = "block")
+      );
+    }
+  };
+
+  //Hide pass signup
+  const hidePassSignup = () => {
+    if (passSignup.type == "text" || passConf.type == "text") {
+      setEyeSignup(
+        (passSignup.type = "password"),
+        (passConf.type = "password"),
+        (viewEye.style.display = "block"),
+        (hideEye.style.display = "none")
+      );
     }
   }
 
@@ -159,11 +189,21 @@ const Contact = ({ submitForm }) => {
         <div>
           <input type="text" placeholder="Zip code" />
         </div>
-        <div>
-          <input type="password" placeholder="Password" />
+        <div className="pass_signup">
+          <input className="pass_signup_input" type="password" placeholder="Password" />
         </div>
-        <div>
-          <input type="password" placeholder="Confirm password" />
+        <div className="pass_confirm_signup">
+          <FontAwesomeIcon
+            className="viewEye_signup"
+            onClick={viewPassSignup}
+            icon={faEye}
+          />
+          <FontAwesomeIcon
+            className="hideEye_signup"
+            onClick={hidePassSignup}
+            icon={faEyeSlash}
+          />
+          <input className="pass_conf_input" type="password" placeholder="Confirm password" />
         </div>
         <button>Signup</button>
         <p onClick={displayLogin} className="display_login">

@@ -292,6 +292,11 @@ display: flex;
 }
 .signup_container {
   display: none;
+  margin: 0 auto;
+  width: 350px;
+}
+.signup_container div input, .signup_container button {
+  width: 100%;
 }
 .display_signup, .display_login {
   color: blue;
@@ -347,7 +352,7 @@ display: flex;
   color: red;
   font-size: 0.8em;
 }
-.input_pass {
+.input_pass, .pass_confirm_signup {
   position: relative;
 }
 .input_pass:hover .eye_open {
@@ -363,11 +368,21 @@ display: flex;
   color: lightgray;
   font-size: 1.5em;
 }
-.eye_close {
+.viewEye_signup, .hideEye_signup {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  color: lightgray;
+  font-size: 1.5em;
+}
+.eye_close, .hideEye_signup {
   display: none;
 }
-.eye_open {
+.eye_open, .viewEye_signup {
   display: block;
+}
+.signup_container:hover .viewEye_signup, .signup_container:hover .hideEye_signup {
+  color: gray;
 }
 
 /*FOOTER*/
