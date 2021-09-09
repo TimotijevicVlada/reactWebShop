@@ -22,9 +22,10 @@ const App = () => {
         <Route path="/about" exact component={About}/>
         <Route path="/contact" exact component={Contact} />
         <Route path="/details/:id" exact component={Details} />
+        <Footer />
+        <FooterUnder />
       </Provider>
-      <Footer />
-      <FooterUnder />
+      
     </Router>
   );
 };

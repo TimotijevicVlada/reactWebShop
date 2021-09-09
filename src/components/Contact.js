@@ -36,7 +36,7 @@ const Contact = ({ submitForm }) => {
   let eyeClose = document.getElementsByClassName("eye_close")[0];
   //View pass for login
   const viewPass = () => {
-    if (pass.type == "password") {
+    if (pass.type === "password") {
       setEye(
         (pass.type = "text"),
         (eyeOpen.style.display = "none"),
@@ -47,7 +47,7 @@ const Contact = ({ submitForm }) => {
 
   //Hide pass for login
   const hidePass = () => {
-    if (pass.type == "text") {
+    if (pass.type === "text") {
       setEye(
         (pass.type = "password"),
         (eyeOpen.style.display = "block"),
@@ -63,7 +63,7 @@ const Contact = ({ submitForm }) => {
   let hideEye = document.getElementsByClassName("hideEye_signup")[0];
   //View pass signup
   const viewPassSignup = () => {
-    if (passSignup.type == "password" || passConf.type == "password") {
+    if (passSignup.type === "password" || passConf.type === "password") {
       setEyeSignup(
         (passSignup.type = "text"),
         (passConf.type = "text"),
@@ -75,7 +75,7 @@ const Contact = ({ submitForm }) => {
 
   //Hide pass signup
   const hidePassSignup = () => {
-    if (passSignup.type == "text" || passConf.type == "text") {
+    if (passSignup.type === "text" || passConf.type === "text") {
       setEyeSignup(
         (passSignup.type = "password"),
         (passConf.type = "password"),

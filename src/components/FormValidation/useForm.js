@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 
-const useForm = (callback, validate) => {
+const useForm = (validate) => {
     const [values, setValues] = useState({
         username: "",
         email: "",
@@ -27,7 +27,6 @@ const useForm = (callback, validate) => {
     useEffect(
         () => {
             if(Object.keys(errors).length === 0 && isSubmitting) {
-                //callback();
                 alert("Succesfull form!");
                 window.location.href = "http://localhost:3000/";
             }
