@@ -25,7 +25,6 @@ const App = () => {
         <Footer />
         <FooterUnder />
       </Provider>
-      
     </Router>
   );
 };

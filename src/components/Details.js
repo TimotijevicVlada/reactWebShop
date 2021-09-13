@@ -33,6 +33,8 @@ const Details = () => {
     useEffect(() => {
         dispatch({type: "PRODUCT", id})
     }, [id])
+
+
     return (
         <div className="details-container">
             <div className="details-img">

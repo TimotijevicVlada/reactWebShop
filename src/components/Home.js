@@ -16,7 +16,7 @@ const Home = () => {
             <div className="product">
               <div className="product-img">
                 <Link to={`/details/${elem.id}`}>
-                  <img src={`images/${elem.image}`} alt="image name" />
+                  <img src={`images/${elem.image}`} alt="name" />
                 </Link>
               </div>
               <div className="product-name">
