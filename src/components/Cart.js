@@ -62,7 +62,7 @@ const Cart = () => {
                 </div>
                 <div className="cart-trash">
                   <i
-                    class="fas fa-trash"
+                    className="fas fa-trash"
                     onClick={() =>
                       dispatch({ type: "REMOVE", payload: item.id })
                     }

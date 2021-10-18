@@ -30,9 +30,11 @@ const Details = () => {
     const dispatch = useDispatch();
     const {product} = useSelector(state => state.ProductsReducer);
     //console.log(product);   //Dobijam pojedinacni product koji kliknem
+
+    
     useEffect(() => {
         dispatch({type: "PRODUCT", id})
-    }, [id])
+    }, [id, dispatch])
 
 
     return (

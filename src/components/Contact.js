@@ -32,7 +32,7 @@ const Contact = () => {
               placeholder="Password"
             />
           </div>
-          <button class="form-input-btn" type="submit">
+          <button className="form-input-btn" type="submit">
             Login
           </button>
           <p className="display_signup">
@@ -52,19 +52,19 @@ const Contact = () => {
         <div className="contact_us">
           <h2>Contact us</h2>
           <div>
-            <i class="fas fa-map-marker-alt"></i>Knez Mihailova 40b
+            <i className="fas fa-map-marker-alt"></i>Knez Mihailova 40b
           </div>
           <div>
-            <i class="fas fa-globe-europe"></i>Belgrade, Serbia
+            <i className="fas fa-globe-europe"></i>Belgrade, Serbia
           </div>
           <div>
-            <i class="fas fa-building"></i>Workdays 7 days 24 hours
+            <i className="fas fa-building"></i>Workdays 7 days 24 hours
           </div>
           <div>
-            <i class="fas fa-phone-alt"></i>+381631188180
+            <i className="fas fa-phone-alt"></i>+381631188180
           </div>
           <div>
-            <i class="far fa-envelope"></i>timotijevicvlada@gmail.com
+            <i className="far fa-envelope"></i>timotijevicvlada@gmail.com
           </div>
         </div>
       </div>
