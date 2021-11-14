@@ -37,7 +37,7 @@ const Cart = () => {
                   <div>${item.discountPrice}</div>
                 </div>
                 <div>
-                  <div>
+                  <div className="cart_inc_dec">
                     <span
                       className="dec"
                       onClick={() =>

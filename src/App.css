@@ -10,6 +10,9 @@ a {
 }
 
 /*NAVBAR*/
+.fa-bars {
+  display: none;
+}
 .navbar {
   position: fixed;
   top: 0%;
@@ -443,4 +446,69 @@ display: flex;
 }
 .underFooter_container div p {
   color: gray;
+}
+
+@media screen and (max-width: 1250px) {
+  .cover_pic {
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .cover_pic {
+    background-position: left;
+  }
+  .details-container {
+    padding: 100px 50px;
+  }
+  .summary-display {
+    padding: 5px;
+    margin: 5px;
+  }
+  .summary-display div {
+    font-size: 17px;
+  }
+  .cart_inc_dec {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+  }
+  .cart_inc_dec span {
+    padding: 0px;
+    border: none;
+  }
+  .cart_inc_dec span i {
+    padding: 3px;
+    font-size: 15px;
+   border-radius: 50%;
+  }
+  .about_container {
+    margin: 100px 50px;
+    min-height: 63vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cover_pic {
+    background-position: -40px;
+  }
+  .fa-bars {
+    display: block;
+    font-size: 23px;
+    cursor: pointer;
+  }
+  .nav_left {
+    position: fixed;
+    top: 70px;
+    left: -60%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 50%;
+    background-color: white;
+  }
+  .nav_left h2 {
+    margin: 10px 0px;
+  }
 }

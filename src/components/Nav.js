@@ -9,6 +9,7 @@ const Nav = () => {
         <div className="navbar">
             <div className="container">
                 <div className="nav_container">
+                    <i className="fas fa-bars"></i>
                     <div className="nav_left">
                         <Link to="/"><h2>Home</h2></Link>
                         <Link to="/contact"><h2>Contact</h2></Link>
