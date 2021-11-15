@@ -21,7 +21,7 @@ const Cart = () => {
             <div>Name</div>
             <div>Price</div>
             <div>Inc/Dec</div>
-            <div>Total price</div>
+            <div className="total_item_price">Total price</div>
             <div>Remove</div>
           </div>
           <div className="cart-display-products">
@@ -57,7 +57,7 @@ const Cart = () => {
                     </span>
                   </div>
                 </div>
-                <div>
+                <div className="item_total_price_num">
                   <div>${(item.discountPrice * item.quantity).toFixed(2)}</div>
                 </div>
                 <div className="cart-trash">
