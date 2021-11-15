@@ -79,7 +79,7 @@ a {
 
 /*HOME*/
 .cover_pic {
-  background: url("./cover_pic.jpg");
+  background: url("./cover_img/cover_pic.jpg");
   height: 100vh;
   background-size: cover;
   background-attachment: fixed;
